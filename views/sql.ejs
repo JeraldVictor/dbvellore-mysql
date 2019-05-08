@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SQL Queries Runner</title>
+	<link rel="icon" type="image/gif/png" href="/images/skllogo.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/sql.css">
+</head>
+<body>
+	<div class="main">
+		<div class="container border">
+		<form action="/sql" method="POST">
+			<div class="input">
+				<div class="form-group">
+			    	<label for="intitle"><h3>Your Queries</h3></label>
+			    	<p>
+			    		<span>*Note:</span> 
+			    		<ol>
+			    			<li>Tables Are <span>"student" "pastpeople" teacher"</span></li>
+			    			<li><span>Structure of The Table :</span> PRAGMA table_info(table_name);</li>
+			    			<li><span>All other Commands sre similar like Other sql Queries</span></li>
+			    			<li>to display tables <span>select name from sqlite_master where type='table'</span></li>
+			    		</ol>
+			    	</p>
+			    	<textarea class="form-control" id="intitle" rows="6" name="queries"><%=sql%></textarea>
+			  	</div>
+			  	<button class="btn btn-primary" type="submit">Run Query</button>
+			  	<br>
+			  	<br>
+			</div>
+		</form>
+	</div>
+	<div class="container">
+			<%if(errors){%>
+			<div class="container err">
+				<h3>Errors:</h3>
+				<br>
+				<%=errors.message%>
+			</div>
+			<%}%>
+			<%if(out){%>
+				<div class=" container output">
+					<h3>output</h3>
+						<hr class="style-three">
+						<%for(var i=0;i<out.length;i++){%>
+						<p><strong> SI.NO : </strong><span><%=(i+1)%></span></p>
+						<%for(obj in out[i]){%>
+						<div class="result">
+					    	<p><%=obj%> : <%=out[i][obj]%></p>
+					    </div>
+					    <%}%>
+					    <hr class="style-three">
+				    <%}%>
+				</div>
+			<%}%>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+    <title><%=title%></title>
+	  <link rel="icon" type="image/gif/png" href="/images/skllogo.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+<body>
+	<nav>
+      <div class="ham">
+        <img src="/images/skllogo.png" id="logo" width="25" height="25">
+        <span class="tal">Don Bosco Matric Hr.Sec School</span>
+        <img src="/images/menu.png" class="himg" width="30" height="30">
+      </div>
+      <ul>
+        <li class="logo"><a href="/home"><img src="/images/skllogo.png" width="50" height="50"></a></li>
+      <li >
+        <a <% if (title === 'Home') { %>class="active" <% } %> href="/home"><img class="i" src="/images/home.svg" width="20px" height="20px">Home</a>
+      </li>
+      <li>
+          <a <% if (title === 'Add A Teacher') { %>class="active" <% } %> href="/teachers/add"><img class="i" src="/images/user-plus-solid.svg" width="20px" height="20px">Add Teacher</a>
+        </li>
+        <li>
+          <a <% if (title === 'Edit A Teacher') { %>class="active" <% } %> href="/teachers/edit"><img class="i" src="/images/edit.svg" width="20px" height="20px">Edit Teachers</a>
+        </li>
+      <li>
+        <a <% if (title === 'Add Student') { %>class="active" <% } %> href="/students/add"><img class="i" src="/images/user-plus-solid.svg" width="20px" height="20px">Add Student</a>
+      </li>
+      <li >
+        <a <% if (title === 'Edit A Student') { %>class="active" <% } %> href="/students/show"><img class="i" src="/images/edit.svg" width="20px" height="20px">Edit Student</a>
+      </li>
+      <li>
+        <a <% if (title === 'Upgrade') { %>class="active" <% } %> href="/upgrade"><img class="i" src="/images/upgrade.png" width="20px" height="20px">Upgrade</a>
+      </li>
+      <li>
+        <a <% if (title === 'Past People') { %>class="active" <% } %> href="/past-people"><img class="i" src="/images/past-people.png" width="20px" height="20px">Past People</a>
+      </li>
+        <li class="lnav">
+            <a href="/logout">Log Out<img class="i" src="/images/logout.svg" width="20px" height="20px"></a>
+        </li>
+      </ul>
+    </nav>
+  <br>

@@ -1,0 +1,129 @@
+<% include layouts/header.ejs %>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/edit-user.css">
+
+	<br>
+	<div>
+	<div class="container">
+	<h5 style="text-align:center; padding:10px;"><%=std%> - <%=sec%></h5>
+	<h6 style="text-align:center; padding:10px;">Total Students In this Class are <strong><%=total%></strong></h6>
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<td>class</td>
+				<td>STRENGTH</td>
+				<td>CHRISTIAN</td>
+				<td>HINDU</td>
+				<td>MUSLIM</td>
+				<td>SC(A)</td>
+				<td>SC</td>
+				<td>ST</td>
+				<td>BC</td>
+				<td>BCM</td>
+				<td>MBC</td>
+				<td>OC</td>
+				<td>FC</td>
+				<td>OTHERS</td>
+			</tr>
+			<tr>
+				<td><%=std%>-<%=sec%></td>
+				<td>
+					TOTAL:<%=total%>
+					<br>
+					BOYS:<%=listoff.male%>
+					<br>
+					GIRLS:<%=listoff.female%>
+				</td>
+				<td><%=listoff.christian%></td>
+				<td><%=listoff.hindu%></td>
+				<td><%=listoff.muslim%></td>
+				<td><%=listoff.sca%></td>
+				<td><%=listoff.sc%></td>
+				<td><%=listoff.st%></td>
+				<td><%=listoff.bc%></td>
+				<td><%=listoff.bcm%></td>
+				<td><%=listoff.mbc%></td>
+				<td><%=listoff.oc%></td>
+				<td><%=listoff.fc%></td>
+				<td><%=listoff.others%></td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="print">
+		<img src="/images/print.png" alt="" width="20" height="20">
+		<a href="#"> Print as Report</a>
+	</div>
+		<table class="table table-bordered">
+			<tbody>
+				<% for(var i=0; i < list.length ; i++) { %>
+			<thead>
+		    <tr>
+				<th scope="col">SI.No</th>
+				<th scope="col">Image</th>
+		      	<th scope="col">Name - add no <br> Std-Sec</th>
+		      	<th scope="col">Phone Number</th>
+		     	<th scope="col">Address</th>
+		      	<th colspan="2" scope="col">ICON</th>
+		    </tr>
+			</thead>
+		    <tr>
+					<th rowspan="3" scope="row"><%=i+1%></th>
+					<td><img class="img-thumbnail" src="data:image/png;base64,<%=list[i].img%>" width="100px" height="100px"></td>
+		      <td><p><%=list[i].name %> - <%=list[i].add_no%></p> <p><%=list[i].std %> - <%=list[i].sec %></p></td>
+		      <td><p><%=list[i].mob1%> <br> <%=list[i].mob2%></p></td>
+					<td class="address-col"><p><%=list[i].address%></p></td>
+					<td colspan="2">
+		      	<p class="icontag">
+		      		<form action="/students/modify/<%=list[i].add_no%>/<%=list[i].name%>">
+			      		<button type="submit">
+			      			<img src="/images/edit.png" width="20px" height="20px">
+			      		</button>
+			      		<br>Edit
+		      		</form>
+		      	</p>
+		      	<p class="icontag">
+		      		<form action="/students/delete/<%=list[i].add_no%>/<%=list[i].name%>">
+			      		<button type="submit">
+			      			<img src="/images/deleteuser.png" width="20px" height="20px">
+			      		</button>
+			      		<br>Delete
+		      		</form>
+		      	</p>
+		      </td>
+				</tr>
+				<tr>
+					<th><p>Exam.no</p></th>
+					<th><p>Aadhar</p></th>
+					<th><p>EMIS</p></th>
+					<th><p>Relegion</p></th>
+					<th><p>Caste</p></th>
+					<th><p>Community</p></th>
+				</tr>
+				<tr>
+					<td><p><%=list[i].exno%></p></td>
+					<td><p><%=list[i].aadhar%></p></td>
+					<td><p><%=list[i].emis%></p></td>
+					<td><p><%=list[i].religion%></p></td>
+					<td><p><%=list[i].caste%></p></td>
+					<td><p><%=list[i].community%></p></td>
+				</tr>
+		    </form>
+		    <% } %>
+		  </tbody>
+		</table>
+	</div>
+</div>
+    <script src="/javascripts/jquery.js"></script>
+<script type="text/javascript">
+	$(".print").click(function(){
+    	var inp=prompt("Give the Starting Year");
+		console.log(inp)
+		var url;
+		if(inp===null){
+			url="/students/edit/<%=std%>/<%=sec%>"
+		}else{
+		url="/report/year/"+inp+"/<%=std%>/<%=sec%>/1"
+		window.location.href=url;
+	}
+    });
+</script>
+<% include layouts/footer.ejs %>

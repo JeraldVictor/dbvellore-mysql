@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Left atendence</title>
+	<link rel="icon" type="image/gif/png" href="/images/skllogo.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/daily-atnd.css" media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/print-daily-atnd.css" media="print">
+</head>
+<body>
+<div class="printing">
+	<h4>Preparing Your PDF</h4>
+	<img src="/images/workingas.gif" alt="">
+</div>
+<div id="border">
+    <div id="pagination" class="row">
+        <div class="col">
+            <%-data.pages%>
+        </div>
+        <div class="col">
+            <button id="printbtn" class="btn btn-light">
+                <img src="/images/print.png" alt="" width="20" height="20"> <strong> Print</strong>
+            </button>
+            <br>
+            <a href="/report/daily2/<%=data.std%>/<%=data.sec%>/1/page2/1/<%=data.std%>/<%=data.sec%>">Left Page Atnd</a>
+        </div>
+    </div>
+    <div class="outline">
+        <br>
+        <div class="wid">
+            <img class="dblogo" src="/images/donbosco.jpg" width="100px" height="100px">
+            <div class="head">DON BOSCO MATRICULATION HR SEC SCHOOL</div>
+            <br>
+            <div class="subhead">
+                <span>CLASS <%=data.std%> - <%=data.sec%></span>
+                <span>ATTENDANCE REGISTER FOR THE MONTH OF <%=data.month%> <%=data.year%> </span>
+            </div>
+            <br>
+        </div>
+        <hr class="style-seven">
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>Name</th>
+                <%for (var i =15; i < start; i++) {%>
+                <td class="num"><%=Math.round(i+1)%></td>
+                <%} inc=0;%>
+                <td>Month Total</td>
+                
+            </thead>
+            <tbody>
+            <%Object.keys(data.items).forEach(function (key) {%>
+                <tr>
+                    <td><%=(data.start+1)%></td>
+                    <td width="30%" height="10" class="text-left"><%=data.items[key].name%></td>
+                    <%for (var i =0; i < days.length; i++) {%>
+                        <%if(days[i]==="Sun"){%>
+                            <td>SUN</td>
+                        <%}else{%>
+                            <td> </td>
+                        <%}%>
+                    <%}%>
+                    <td></td>
+                </tr>
+                <%data.start++});%>
+                <div>
+                <%if(last==="ok"){%>
+                    <tr>
+                        <td colspan="2">Strength of the Class</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="2">TC/Long Absent</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Total No of Students Present FN</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Signature of Teacher</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Total No of Students Present AN</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Signature of Teacher</td>
+                        <td></td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <%}%>
+                </div>
+                </tbody>
+        </table>
+    </div>
+</div>
+    <script src="/javascripts/jquery.js"></script>
+    <script>
+    $("#printbtn").click(function(){
+        $("#border").css("display","none");
+        $(".printing").css("display","block");
+        window.location.href='/report/daily/print/daily/<%-data.pageCount%>';
+    });
+    </script>
+</body>
+</html>

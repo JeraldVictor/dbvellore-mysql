@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Right atendence</title>
+	<link rel="icon" type="image/gif/png" href="/images/skllogo.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/daily-atnd.css" media="screen,projection">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/print-daily-atnd.css" media="print">
+</head>
+<body>
+<div class="printing">
+    <h4>Preparing Your PDF</h4>
+    <img src="/images/workingas.gif" alt="">
+</div>
+<div id="border">
+<div id="pagination" class="row">
+    <div class="col">
+        <%-data.pages%>
+    </div>
+    <div class="col">
+        <button id="printbtn" class="btn btn-light">
+            <img src="/images/print.png" alt="" width="20" height="20" style="margin:10px;"> <strong> Print</strong>
+        </button>
+    </div>
+</div>
+    <div class="outline">
+		<br>
+		<div class="wid">
+			<img class="dblogo" src="/images/donbosco.jpg" width="100px" height="100px">
+	    <div class="head">DON BOSCO MATRIC HR. SEC. SCHOOL</div>
+	    <br>
+	    <div class="subhead">
+	    	<span>CLASS <%=data.std%> - <%=data.sec%></span>
+	      	<span>ATTENDANCE REGISTER FOR THE MONTH OF <%=data.month%> <%=data.year%> </span>
+	    </div>
+        <br>
+    </div>
+        <hr class="style-seven">
+        <table>
+            <thead>
+                <th>S.No</th>
+                <th>Adm.</th>
+                <th>Student Name</th>
+                <%for (var i =0; i < days.length; i++) { var inc=i%>
+                <td class="num"><%=(inc+1) > 9 ? "" + (inc+1): "0" + (inc+1);%></td>
+                <%} inc=0;%>
+            </thead>
+            <tbody>
+               <%Object.keys(data.items).forEach(function (key) {%>
+                <tr>
+                    <td><%=(data.start+1)%></td>
+                    <td><%=data.items[key].add_no%></td>
+                    <td width="30%" height="10" class="text-left"><%=data.items[key].name%></td>
+                    <%for (var i =0; i < days.length; i++) { inc++%>
+                        <%if(days[i]==="Sun"){%>
+                            <td>SUN</td>
+                        <%}else{%>
+                            <td> </td>
+                        <%}%>
+                    <%}%>
+                </tr>
+                <%data.start++});%>
+                <div>
+                <%if(last==="ok"){%>
+                    <tr>
+                        <td colspan="3">Strength of the Class</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">TC/Long Absent</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total No of Students Present FN</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Signature of Teacher</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Total No of Students Present AN</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Signature of Teacher</td>
+                        <%for (var i =0; i < days.length; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <%}%>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+    <script src="/javascripts/jquery.js"></script>
+    <script>
+    $("#printbtn").click(function(){
+    	$("#border").css("display","none");
+    	$(".printing").css("display","block");
+    	window.location.href='/report/daily/print/daily/<%-data.pageCount%>';
+    });
+</script>
+</body>
+</html>

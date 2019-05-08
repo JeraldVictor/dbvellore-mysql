@@ -1,0 +1,176 @@
+<% include layouts/header.ejs %>
+
+<link href="/stylesheets/addnew.css" rel="stylesheet">
+  <div class="main">
+    <form class="jumbotron container" action="/students/add" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <br>
+	    <div align="center" role="alert" class="alert alert-primary" style="display: <%= typeof msg != 'undefined' ? 'block' : 'none' %>">
+	    	<%= typeof msg != 'undefined' ? msg : '' %>
+	    </div>
+	<br>
+	<div class="form-group">
+          <label for="sname">Name</label>
+          <input type="text" class="form-control" id="sname" placeholder="kumar k" name="sname">
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>Blood Group</label>
+              <input type="text" class="form-control" placeholder="A+ve" name="blood_group">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>Student Image</label>
+              <input type="file" class="form-control-file" name="simg">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="enum">Exam Number</label>
+                    <input type="text" class="form-control" id="enum" placeholder="1712" name="exam_no">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="add_no">Admission Number</label>
+                    <input type="text" class="form-control" id="add_no" placeholder="101 101A" name="add_no">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="std">Standard</label>
+                    <input type="text" class="form-control" id="std" placeholder="12" name="sstd">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="sec">Section</label>
+                    <select class="form-control" id="sec" name="ssec">
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>EMIS</label>
+              <input type="text" class="form-control" placeholder="2010124352" name="emis">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>AADHAR</label>
+              <input class="form-control" type="number" placeholder="109268 12783 29369 18369" name="aadhar">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="dob">D.O.B</label>
+                    <input type="date" class="form-control" id="dob" name="dob">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="MALE">Male</option>
+                        <option value="FEMALE">Female</option>
+                      </select>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Father Name</label>
+                <input  class="form-control" type="text" name="fname" placeholder="John">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Father Occupation</label>
+                <input  class="form-control" type="text" name="foc" placeholder="Clerk">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Name</label>
+                <input  class="form-control" type="text" name="mname" placeholder="Mary T" >
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Occupation</label>
+                <input  class="form-control" type="text" name="moc" placeholder="Teacher">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 1</label>
+                <input type="number" class="form-control" placeholder="Must give" name="mob1" required>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 2</label>
+                <input type="number" class="form-control" placeholder="optinal" name="mob2">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" maxlength="160" name="address" placeholder="Dubai, Dubai main Road"></textarea>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Religion</label>
+                <input class="form-control" type="text" placeholder="Christian" name="religion">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Caste</label>
+              <select class="form-control" name="caste">
+              <option value="OTHERS">OTHERS</option>
+              <option value="SCA">SC(A)</option>
+              <option value="SC">SC</option>
+              <option value="ST">ST</option>
+              <option value="BC">BC</option>
+              <option value="BCM">BCM</option>
+              <option value="MBC">MBC</option>
+              <option value="OC">OC</option>
+              <option value="FC">FC</option>
+              </select>
+            </div>
+            <div class="col">
+              <label>Community</label>
+              <input type="text" class="form-control" placeholder="Community" name="Community">
+            </div>
+		  </div>
+		  <br>
+		  <br>
+          <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+		  </div>
+    </form>
+  </div>
+  <% include layouts/footer.ejs %>

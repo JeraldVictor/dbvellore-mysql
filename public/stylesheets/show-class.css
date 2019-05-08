@@ -1,0 +1,17 @@
+.row
+{
+    text-align: center;
+    border: 1px solid black;
+}
+.col{
+    padding: 40px;
+}
+.col:hover
+{
+    background:white;
+    color: black;
+}
+#border
+{
+    margin-bottom: 10%;
+}

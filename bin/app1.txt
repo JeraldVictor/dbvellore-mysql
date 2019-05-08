@@ -1,0 +1,12 @@
+add this in bat file.
+
+@ECHO OFF
+pm2 start ./bin/www
+
+and add this as a shortcut file to startup folder=>
+win+r type:  shell:startup
+nd paste as shortcut
+
+
+
+npm i body-parser bootstrap dates-between diskdb easy-pdf-merge ejs express express-validator html-pdf http-errors jquery moment multer mysql node-dir phantom puppeteer

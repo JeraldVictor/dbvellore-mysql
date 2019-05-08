@@ -1,0 +1,109 @@
+@page {
+    size: 8.5in 14in;
+    margin-top: 1.2in;
+    margin-bottom: 1in;
+    margin-right: 0.69in;
+    margin-left: 0.66in;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.printing{
+    display: none; 
+}
+.outline {
+    /* border: 2px solid black; */
+    padding-bottom: 25px;
+}
+
+#printbtn {
+    display: none;
+}
+
+#pagination{
+    display: none;
+}
+.wid {
+    margin: 10px;
+}
+
+.dblogo {
+    float: left;
+    margin-left: 30px;
+}
+
+.head {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.subhead {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.subhead span {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+table,
+td,
+th,
+tr {
+    text-align: center;
+    border: 1px solid black;
+}
+
+.num {
+    padding: 10px;
+}
+
+td {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table {
+    font-weight: bold;
+    text-align: center;
+    /* margin-left: 4%; */
+    /* margin-right: 30px; */
+}
+
+.name{
+    padding: 10px;
+    min-width: 10%;
+}
+
+hr.style-seven {
+    overflow: visible;
+    /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before {
+    /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}

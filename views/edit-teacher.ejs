@@ -1,0 +1,115 @@
+<% include layouts/header.ejs %>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/edit-user.css">
+	<style>
+		.center{
+			margin-left: 40px;
+		}
+	</style>  
+  <br>
+  <div class="main">
+  	<form action="/class-teacher" method="POST">
+  		<div class="container">
+  		<div class="text-center center">
+  			<h3>Update Class Teacher</h3>
+  		<div class="row">
+	      <div class="col">
+              <div class="form-group">
+  				    <label for="std">Standad</label>
+  				    <select class="form-control" id="std" name="tstd">
+  				    	<option value="null"> </option>
+  				      <option value="LKG">LKG</option>
+  				      <option value="UKG">UKG</option>
+  				      <option value=1>I</option>
+  				      <option value=2>II</option>
+  				      <option value=3>III</option>
+  				      <option value=4>IV</option>
+  				      <option value=5>V</option>
+  				      <option value=6>VI</option>
+  				      <option value=7>VII</option>
+  				      <option value=8>VIII</option>
+  				      <option value=9>IX</option>
+  				      <option value=10>X</option>
+  				      <option value=11>XI</option>
+  				      <option value=12>XII</option>
+  				    </select>
+  				  </div>
+	      </div>
+	      <div class="col">
+	          <div class="form-group">
+	              <label for="ssec">Section</label>
+  				    <select class="form-control" id="ssec" name="tsec">
+  				    	<option value="null"> </option>
+  				      <option value='a'>A</option>
+  				      <option value='b'>B</option>
+  				      <option value='c'>C</option>
+  				      <option value='d'>D</option>
+  				    </select>
+	            </div>
+	      </div>
+	      <div class="col">
+	      	<div class="form-group">
+	          <label for="teach">Teacher</label>
+            <select class="form-control" id="teach" name="teach">
+            	<option value="all">All Teachers</option>
+              <% for(var i=0; i < list.length ; i++) { %>
+                <option value="<%=list[i].tid %>" > <%=list[i].name %> - <%=list[i].tid %></option>
+              <% } %>
+            </select>
+	        </div>
+	      </div>
+	      <div class="col">
+	      	<br>
+	      	<button class="btn btn-primary">Change</button>
+	      </div>
+  		</div>
+  	</div>
+  	</form>
+	<div class="container">
+		<br>
+		<br>
+		<h3 class="text-center">Teachers</h3>
+		<table class="table table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">SI.No</th>
+		      <th scope="col">Name </th>
+		      <th scope="col">Teacher ID</th>
+		      <th scope="col">Standard</th>
+		      <th scope="col">Image</th>
+		      <th scope="col">ICON</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<% for(var i=0; i < list.length ; i++) { %>
+		    <tr>
+		      <th scope="row"><p class="txt-center"><%=i+1%></p></th>
+		      <td><p><%=list[i].name %></p></td>
+		      <td><p><%=list[i].tid %></p></td>
+		      <td><p><%=list[i].std%> - <%= list[i].sec%></p></td>
+		      <td><img class="img-thumbnail"  src="data:image/png;base64,<%=list[i].img%>" width="100px" height="100px"></td>
+		      <td>
+		      	<p class="icontag">
+		      		<form action="/teachers/edit/<%=list[i].tid%>/<%=list[i].name%>">
+			      		<button type="submit">
+			      			<img src="/images/edit.png" width="20px" height="20px">
+			      		</button>
+			      		<br>Edit
+		      		</form>
+		      	</p>
+		      	<p class="icontag">
+		      		<form action="/teachers/delete/<%=list[i].tid%>/<%=list[i].name%>">
+			      		<button type="submit">
+			      			<img src="/images/deleteuser.png" width="20px" height="20px">
+			      		</button>
+			      		<br>Delete
+		      		</form>
+		      	</p>
+		      </td>
+		    </tr>
+		    </form>
+		      <% } %>
+		  </tbody>
+		</table>
+	</div>
+</div>
+<% include layouts/footer.ejs %>

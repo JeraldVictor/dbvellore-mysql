@@ -1,0 +1,27 @@
+.i
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.img-thumbnail
+{
+    background: transparent;
+}
+#nameu
+{
+    padding: 10%;
+}
+.container
+{
+    margin-top: 10%;
+}
+
+.img-thumbnail,.text-center
+{
+    margin-left: 40%;
+}
+input
+{
+  text-transform: uppercase;
+}

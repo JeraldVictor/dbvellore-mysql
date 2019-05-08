@@ -1,0 +1,14 @@
+.cent
+{
+    text-align: center;
+    width: 0;
+    height: 0;
+    background: white;
+    position: absolute;
+    top:0;
+    bottom: 70%;
+    left: 0;
+    right: 90%;
+    border: none;
+    margin: auto;
+}

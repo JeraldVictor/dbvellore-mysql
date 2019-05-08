@@ -1,0 +1,167 @@
+<% include layouts/header.ejs %>
+    <style>
+        #btns{
+            margin-top:20px;
+            text-align:right;
+        }
+        #pic{
+            text-align:center;
+        }
+    </style>
+  <div class="main">
+    <form class="jumbotron container" action="/students/update/<%=list.add_no%>" method="POST" autocomplete="off">
+    <div class="row justify-content-between">
+    <div class="col">
+        <div class="form-group">
+        <label for="sname">Student Name</label>
+        <input type="text" class="form-control" id="sname" aria-describedby="studentelp"  name="sname" value="<%=list.name %>">
+        </div>
+        <div class="form-group">
+            <label>Blood Group</label>
+            <input type="text" class="form-control"  name="blood_group" value="<%=list.bg%>">
+        </div>
+    </div>
+    <div id="pic" class="col">
+      <div class="form-group">
+        <label class="text-center" for="upimg">Student Image</label>
+        <br>
+        <img  src="data:image/png;base64,<%=list.img%>"  width="150px" height="150" class="img-thumbnail">
+      </div>
+      <div class="form-group">
+        <a href="/pic-upload/<%=list.name %>/<%=list.add_no%>" class="btn btn-dark">Change profile pic</a>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label for="enum">Exam Number</label>
+                <input type="text" class="form-control" id="enum" name="exam_no" value="<%=list.exno%>">
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label for="add_no">Admission Number</label>
+                <input type="text" class="form-control" id="add_no"  name="add_no" value="<%=list.add_no%>">
+            </div>
+        </div>
+    </div>
+	  <div class="row justify-content-between">
+	      <div class="col-6">
+              <div class="form-group">
+  				    <label for="std">Standad</label>
+  				     <input type="text"  class="form-control" id="std" name="sstd" value="<%=list.std%>"> 
+  				  </div>
+	      </div>
+	      <div class="col-6">
+	          <div class="form-group">
+	              <label for="ssec">Section</label>
+	              <input type="text" class="form-control" id="ssec"  name="ssec" value="<%=list.sec %>">
+	            </div>
+	      </div>
+     </div>
+     <div class="row">
+          <div class="col">
+            <div class="form-group">
+              <label>EMIS</label>
+              <input type="text" class="form-control"  name="emis" value="<%=list.emis%>">
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <label>AADHAR</label>
+              <input class="form-control" type="number"  name="aadhar" value="<%=list.aadhar%>">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group">
+                    <label for="dob">D.O.B</label>
+                    <input type="date" class="form-control" id="dob" name="dob" value="<%=list.dob%>">
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input class="form-control" id="gender" name="gender" value="<%=list.gender%>"/>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Father Name</label>
+                <input  class="form-control" type="text" name="fname" value="<%=list.fname%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Father Occupation</label>
+                <input  class="form-control" type="text" name="foc" value="<%=list.foc%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Name</label>
+                <input  class="form-control" type="text" name="mname" value="<%=list.mname%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mother Occupation</label>
+                <input  class="form-control" type="text" name="moc" value="<%=list.moc%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 1</label>
+                <input type="number" class="form-control" name="mob1" required value="<%=list.mob1%>">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mobile Number 2</label>
+                <input type="number" class="form-control" name="mob2" value="<%=list.mob2%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" maxlength="160" name="address" ><%=list.address%></textarea>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Religion</label>
+                <input class="form-control" type="text" name="religion" value="<%=list.religion%>">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label>Caste</label>
+              <input type="text" class="form-control" name="caste" value="<%=list.caste%>">
+            </div>
+            <div class="col">
+              <label>Community</label>
+              <input type="text" class="form-control" name="Community" value="<%=list.community%>">
+            </div>
+		  </div>
+     <div id="btns" class="row">
+        <div class="col">
+            <a class="btn btn-danger" href="/students/edit/<%=list.std %>/<%=list.sec%>">Cancel</a>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary" >Submit</button>
+        </div>
+     </div>
+    </form>
+</div>
+<% include layouts/footer.ejs %>

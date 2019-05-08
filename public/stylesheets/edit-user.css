@@ -1,0 +1,75 @@
+
+.container
+{
+    /* margin-top: 15rem; */
+    margin-bottom: 15rem;
+}
+.container:nth-child(2)
+{
+  margin-bottom: 10%;
+}
+.table td, .table th,
+{
+    padding: .75em;
+    text-align: center;
+}
+.table td
+{
+    vertical-align: inherit;
+}
+
+td, .txt-center
+{
+    padding-top: 30px;
+    text-align: center;
+}
+
+tr th
+{
+    text-align: center;
+}
+
+td img .icontag
+{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+#fet
+{
+    margin-top: 30px;
+}
+
+button{
+    background: none;
+    border: none;
+}
+
+input
+{
+  text-transform: uppercase;
+}
+
+.print
+{
+    padding:10px;
+    text-align: end;
+    color:black;
+}
+.print a{
+    color: black;
+}
+ .print a:hover
+ {
+     color:black;
+     text-decoration: none;
+ }
+ .address-col {
+     /* overflow-x: hidden; */
+     width: 20%;
+     height: 10%;
+     padding: 3px;
+     margin: 0;
+ }

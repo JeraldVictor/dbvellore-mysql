@@ -1,0 +1,44 @@
+.i
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+nav
+{
+    /*background-color:RGB(250,125,25);*/
+    background: #6fb0e8;
+}
+.img-thumbnail
+{
+    background: transparent;
+}
+#nameu
+{
+	padding: 10%;
+}
+
+.container
+{
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+#foot
+{
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #F8F9FA;
+    background: #F8F9FA;
+    text-align: center;
+}
+
+.active
+{
+    color: black;
+}
+input
+{
+  text-transform: uppercase;
+}

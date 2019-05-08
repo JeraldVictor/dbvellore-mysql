@@ -1,0 +1,38 @@
+<% include layouts/header.ejs %>
+  <div class="jumbotron container">
+  <div class="main">
+    <br>
+	    <div align="center" role="alert" class="alert alert-primary" style="display: <%= typeof msg != 'undefined' ? 'block' : 'none' %>">
+	    	<%= typeof msg != 'undefined' ? msg : '' %>
+	    </div>
+    <br>
+    <p>
+    	Do you agree to Promote all Your students.
+    	<br>
+    	<br>
+		*<span style="color: red; text-decoration: underline;">note:</span>
+    	<br>
+    	<span style="margin-left: 20px;">this may delete the recods of currently present 12th standerd students.</span>
+    </p>
+
+    <div class="align-content-end">
+	    <a  href="/home" class="btn btn-danger">Home</a>
+	    <button id="upgrade" type="submit" class="btn btn-primary" style="display: <%= typeof msg != 'undefined' ? 'none' : 'all' %>">Upgrade</button>
+    </div>
+</div>
+</div>
+<script src="/javascripts/jquery.js"></script>
+<script type="text/javascript">
+	$("#upgrade").click(function(){
+    	var inp=prompt("Give the Starting Academic Year ex: 2019-2020");
+		console.log(inp)
+		var url;
+		if(inp===null){
+			url="/upgrade"
+		}else{
+		url="/upgrade/post/"+inp
+		window.location.href=url;
+	}
+    });
+</script>
+<% include layouts/footer.ejs %>

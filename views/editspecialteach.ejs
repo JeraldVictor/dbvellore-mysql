@@ -1,0 +1,64 @@
+<% include layouts/header.ejs %>
+    <link href="/stylesheets/spec-user.css" rel="stylesheet">
+
+  <br>
+  <div class="main">
+    <form class="jumbotron container" action="/teachers/update/<%=list.tid%>" method="POST" autocomplete="off">
+    <div class="row justify-content-between">
+    <div class="col-6">
+        <div class="form-group">
+        <label for="sname">Teacher Name</label>
+        <input type="text" class="form-control" id="sname" aria-describedby="studentelp" placeholder="munusami s" value="<%=list.name%>" name="tname">
+        <small id="studenthelp" class="form-text text-muted">Full Name As Per Application</small>
+        </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label class="text-center" for="upimg">Teacher's Image</label>
+        <br>
+        <img  src="data:image/png;base64,<%=list.img%>"  width="150px" height="150" class="img-thumbnail">
+      </div>
+      <div class="form-group">
+        <a href="/pic-upload/teacher/<%=list.name %>/<%=list.tid%> " style="color: black; margin-left: 43%;">Change profile pic</a>
+      </div>
+    </div>
+	</div>
+	<br>
+	<br>
+	  <div class="row justify-content-between">
+	      <div class="col-6">
+              <div class="form-group">
+  				    <label for="std">Standad</label>
+  				     <input type="text"  class="form-control" id="tstd" name="tstd" value="<%= list.std%>"> 
+  				  </div>
+	      </div>
+	      <div class="col-6">
+	          <div class="form-group">
+	              <label for="ssec">Section</label>
+	              <input type="text" class="form-control" id="tsec"  name="tsec" value="<%=list.sec %>">
+	            </div>
+	      </div>
+    <div class="row justify-content-between">
+      <div class="col-6">
+          <div class="form-group">
+              <label for="phno">Contact Number</label>
+              <input type="number" class="form-control" id="phno"  name="tphno" value="<%=list.phno%>">
+            </div>
+      </div>
+      <div class="col-6">
+          <div class="form-group">
+              <label for="add_no">Teacher's ID Number</label>
+              <br>
+              <input id="add_no" class="form-control" type="number" name="tid" value="<%=list.tid%>">
+          </div>
+      </div>
+    </div>
+	  <div style="margin-left: 70%;">
+	  	<a class="btn btn-danger" href="/teachers/edit">Cancel</a>
+		<button type="submit" class="btn btn-primary" >Submit</button>
+	  </div>
+    </form>
+    </div>
+  </form>
+</div>
+<% include layouts/footer.ejs %>

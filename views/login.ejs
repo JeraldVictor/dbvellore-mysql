@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> SCHOOL-LOGIN</title>
+    <link rel="icon" type="/image/gif/png" href="/images/skllogo.png" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+</head>
+    <body>       
+        <div class="logo">
+            <img src="/images/skllogo.png" width="90" height="60">
+            <span class="padi-10">
+                Don Bosco Matric Hr.Sec School
+            </span>
+        </div>
+        <% if(msg!=null){%>
+                <div id="flash" class="alert alert-danger">
+                    <%=msg%>
+                </div>
+            <%}%>
+
+        <div class="jumbotron cent">
+            <h4>LOGIN-PORTAL</h4>
+            <hr>
+            <form action="/login"  method="post" autocomplete="off">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="User Name" name="userid">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><img src="/images/user.png" width="20" height="20"></span>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <input type="password" class="form-control" placeholder="Password" name="password">
+                    <div class="input-group-append">
+                        <span class="input-group-text" ><img src="/images/lock.png" width="20" height="20"></span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">LOGIN <img src="/images/login.png" width="20" height="20"></button>
+            </form>
+        </div>
+        <footer class="card-footer text-muted" id="foot">
+            <a href="http://jeraldvictor.co.in" target="_blank">
+                <h5> &copy; Jerald Victor </h5>
+            </a>
+        </footer>
+</body>
+</html>

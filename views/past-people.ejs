@@ -1,0 +1,57 @@
+<% include layouts/header %>
+<link rel="stylesheet" href="/stylesheets/pastpeople.css">
+<style>
+   .address-col {
+     /* overflow-x: hidden; */
+     width: 20%;
+     height: 10%;
+     padding: 3px;
+     margin: 0;
+ }
+</style>
+  <div class="main">
+    <div class="container">
+      <table class="table table-bordered">
+        <thead class="bg-warning">
+          <tr class="">
+            <th scope="col">SI.No</th>
+            <th scope="col">Add no</th>
+            <th scope="col">Image</th>
+            <th scope="col">Name - EMIS</th>
+            <th scope="col">passed out year</th>
+            <th scope="col">phone number</th>
+            <th scope="col">Address</th>
+          </tr>
+        </thead>
+
+        <div class="container">
+            <form action="/past-people" method="POST">
+              <h3 style="text-decoration: underline;">Past Peoples</h3>
+                <label>Type Which Year Students To Display</label>
+                <div class="row">
+                  <input type="text" name="year" class="col form-control" placeholder="ex:2019-2020">
+                  <div class="col-2"></div>
+                  <button class="col btn btn-primary">Sort</button>
+                </div>
+            </form>
+            <br>
+            <br>
+        <tbody>
+          <%for(var i=0;i<list.length;i++){%>
+          <tr>
+            <td><%=(i+1)%></td>
+            <td><%=list[i].adm_no%></td>
+            <td><img src="data:image/png;base64,<%=list[i].img%>" width="100px" height="100px"></td>
+            <td><%=list[i].name%> <br>[<%=list[i].emis%>]</td>
+            <td><%=list[i].year_passed%></td>
+            <td><%=list[i].phno%></td>
+            <td class="address-col">
+              <%=list[i].address%>
+            </td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<% include layouts/footer %>

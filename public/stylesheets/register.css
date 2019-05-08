@@ -1,0 +1,12 @@
+h3{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.btns{
+    float: right;
+}
+.container{
+    width: 40%;
+    margin-top:10%;
+}

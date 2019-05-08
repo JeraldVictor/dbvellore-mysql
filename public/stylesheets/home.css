@@ -1,0 +1,213 @@
+.i
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+nav
+{
+    width: 100%;
+    background: #6fb0e8;
+}
+
+.linesin li {
+    display: block;
+    text-decoration: underline;
+}
+.linesin li:before{
+
+    text-decoration: none;
+    content: "•";
+    padding-right: 10px;
+    color:black;
+}
+
+nav ul 
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav ul li
+{
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+nav ul li:hover
+{
+    color: black;
+}
+
+nav li:nth-child(1):hover
+{
+    background-color: inherit;
+}
+
+nav ul li a
+{
+    color: white;
+   text-decoration: none;
+}
+
+nav ul li a:hover 
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.main
+{
+    margin-top: 5em;
+}
+
+.lnav
+{
+    position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.ham
+{
+    text-align: center;
+   background: #6fb0e8;
+    box-sizing: border-box;
+    width: 100%;
+    padding:10px 20px;
+    display: none;
+}
+
+#logo
+{
+    position: absolute;
+    top: 2;
+    left: 0;
+    margin-left:10px;   
+}
+.himg
+{
+    position: absolute;
+    top: 2;
+    right: 0;
+    margin-right:10px;
+}
+
+.tal
+{
+    color: white;
+}
+
+h4
+{
+    margin-right: 10%;
+}
+h1
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 45px;
+    color: black;
+    padding: 10px;
+}
+
+.active
+{
+  color: black;
+}
+
+#foot
+{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #F8F9FA;
+    background: #F8F9FA;
+    text-align: center;
+}
+.foot
+{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #F8F9FA;
+    background: #F8F9FA;
+    text-align: center;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px)
+{
+   nav ul
+   {
+      display: none;
+   }
+   nav ul li
+   {
+      display: block;
+      text-align:center;
+   }
+   .logo
+   {
+      display: none;
+   }
+   .ham
+   {
+      display: block;
+   }
+   .act
+   {
+      transition:2s;
+      display: block;
+   }
+   .lnav
+   {
+      position: relative;
+   }
+}
+
+@media screen and (max-width: 1080px){
+   nav ul
+   {
+    display: none;
+   }
+   nav ul li
+   {
+    display: block;
+    text-align:center;
+   }
+   .logo
+   {
+    display: none;
+   }
+   .ham
+   {
+    display: block;
+   }
+   .act
+   {
+    transition:2s;
+    display: block;
+   }
+   .lnav
+   {
+    position: relative;
+   }
+   
+}
+
+input,textarea
+{
+  text-transform: uppercase;
+}

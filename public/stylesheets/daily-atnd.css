@@ -1,0 +1,110 @@
+.printing{
+    margin-top: 5%;
+    text-align: center;
+    display: none; 
+}
+#pagination{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+#pagination .col
+{
+    text-align:center;
+}
+#printbtn{
+    background: none;
+}
+.outline {
+    border: 2px solid black;
+    padding-bottom: 25px;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin: 10%;
+}
+
+.wid {
+    margin: 10px;
+}
+
+.dblogo {
+    float: left;
+    margin-left: 30px;
+}
+
+.head {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+}
+
+.subhead {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+
+.subhead span {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+table,
+td,
+th,
+tr {
+    border: 1px solid black;
+}
+
+.num {
+    padding: 10px;
+}
+
+td {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+table {
+    font-weight: bold;
+    text-align: center;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.name {
+    text-align: left;
+    padding-right: 50px
+}
+
+.name2 {
+    text-align: left;
+}
+
+
+
+
+hr.style-seven {
+    overflow: visible;
+    /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before {
+    /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}

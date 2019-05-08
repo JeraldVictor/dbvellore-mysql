@@ -1,0 +1,87 @@
+<% include layouts/header.ejs %>
+    <link href="/stylesheets/addnew.css" rel="stylesheet">
+  <br>
+  <div class="main">
+  <div class="container">
+    
+   <form class="jumbotron container" action="/teachers/add" method="POST" autocomplete="off" enctype="multipart/form-data">
+    <br>
+      <div align="center" role="alert" class="alert alert-primary" style="display: <%= typeof msg != 'undefined' ? 'block' : 'none' %>">
+        <%= typeof msg != 'undefined' ? msg : '' %>
+      </div>
+    <br>
+	<div class="row justify-content-between">
+    <div class="col-6">
+        <div class="form-group">
+        <label for="sname">Teacher's Name</label>
+        <input type="text" class="form-control" id="sname" aria-describedby="studentelp" placeholder="Munusami s" name="tname">
+        <small id="studenthelp" class="form-text text-muted">Full Name As Per Documents</small>
+        </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="upimg">Select Image</label>
+        <input type="file" class="form-control-file" id="upimg" name="profileImage">
+      </div>
+    </div>
+	</div>
+	<br>
+	<br>
+
+	<div class="row justify-content-between">
+      <div class="col">
+          <div class="form-group">
+              <label for="add_no">Teacher's ID Number</label>
+              <br>
+              <input id="add_no" class="form-control" type="number" name="tid" placeholder="Teacher ID">
+          </div>
+      </div>
+  	</div>
+  	 <div class="row justify-content-between">
+	      <div class="col-6">
+              <div class="form-group">
+  				    <label for="std">Handling for Standad</label>
+  				    <select class="form-control" id="std" name="tstd">
+                <option value=""> </option>
+                <option value="LKG">LKG</option>
+                <option value="UKG">UKG</option>
+  				      <option value=1>I</option>
+  				      <option value=2>II</option>
+  				      <option value=3>III</option>
+  				      <option value=4>IV</option>
+  				      <option value=5>V</option>
+  				      <option value=6>VI</option>
+  				      <option value=7>VII</option>
+  				      <option value=8>VIII</option>
+  				      <option value=9>IX</option>
+  				      <option value=10>X</option>
+  				      <option value=11>XI</option>
+  				      <option value=12>XII</option>
+  				    </select>
+  				  </div>
+	      </div>
+	      <div class="col-6">
+	          <div class="form-group">
+	              <label for="ssec">Section</label>
+  				    <select class="form-control" id="ssec" name="tsec">
+                <option value=" "> </option>
+  				      <option value='a'>A</option>
+  				      <option value='b'>B</option>
+  				      <option value='c'>C</option>
+  				      <option value='d'>D</option>
+  				      <option value='e'>E</option>
+  				    </select>
+	            </div>
+	      </div>
+	  </div>
+    <div class="col-6">
+        <div class="form-group">
+            <label for="phno">Contact Number</label>
+            <input type="number" class="form-control" id="phno" placeholder="987654321" name="tphno">
+          </div>
+    </div>
+	<button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+    </div>
+  </div>
+<% include layouts/footer.ejs %>

@@ -1,0 +1,35 @@
+.container:nth-child(1)
+{
+	margin-top: 10%;
+}
+.err{
+	color: red;
+}
+
+.output{
+	border: 1px solid black;
+	color: black;
+}
+h3{
+	text-decoration: underline;
+	text-align: center;
+}
+span{
+	font-weight: bold;
+}
+
+hr.style-three {
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    background: #999;
+}
+.result
+{
+	margin-left: 10%;
+}
+strong{
+	text-decoration: underline;
+}
+.main{
+	margin-bottom: 10%;
+}

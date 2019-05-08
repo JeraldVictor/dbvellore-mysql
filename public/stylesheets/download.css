@@ -1,0 +1,20 @@
+.row{
+	padding: 10px;
+}
+
+.container{
+	text-align: center;
+	border: 2px solid black;
+}
+p a{
+	color: white;
+}
+p a:hover{
+	text-decoration: none;
+	color: white;
+}
+
+.row img{
+	width: 40px;
+	height: 40px;
+}

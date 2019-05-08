@@ -1,0 +1,198 @@
+.i
+{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+body
+{
+    padding: 0;
+    margin: 0;
+}
+
+nav
+{
+    width: 100%;
+    background: #6fb0e8;
+}
+
+ul 
+{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul li
+{
+    display: inline-block;
+    list-style: none;
+    padding: 20px;
+}
+
+ul li:hover
+{
+    color: black;
+}
+
+li:nth-child(1):hover
+{
+    background-color: inherit;
+}
+
+ul li a
+{
+    color: white;
+   text-decoration: none;
+}
+
+ul li a:hover 
+{
+    text-decoration: none;
+    color: black;
+}
+
+
+.main
+{
+    margin-top: 5em;
+}
+
+.lnav
+{
+    position: absolute;
+   top: 10px;
+   right: 10px;
+}
+
+.ham
+{
+    text-align: center;
+   background: #6fb0e8;
+    box-sizing: border-box;
+    width: 100%;
+    padding:10px 20px;
+    display: none;
+}
+
+#logo
+{
+    position: absolute;
+    top: 2;
+    left: 0;
+    margin-left:10px;   
+}
+.himg
+{
+    position: absolute;
+    top: 2;
+    right: 0;
+    margin-right:10px;
+}
+
+.tal
+{
+    color: white;
+}
+
+h4
+{
+    margin-right: 10%;
+}
+h1
+{
+    text-align: center;
+    font-style: italic;
+    font-size: 45px;
+    color: black;
+    padding: 10px;
+}
+
+#foot
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border: 1px solid #F8F9FA;
+    background: #F8F9FA;
+    text-align: center;
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px)
+{
+   ul
+   {
+      display: none;
+   }
+   ul li
+   {
+      display: block;
+      text-align:center;
+   }
+   .logo
+   {
+      display: none;
+   }
+   .ham
+   {
+      display: block;
+   }
+   .act
+   {
+      transition:2s;
+      display: block;
+   }
+   .lnav
+   {
+      position: relative;
+   }
+   #foot
+   {
+    position: absolute;
+    bottom: 0;
+   }
+}
+
+@media screen and (max-width: 1080px){
+   ul
+   {
+    display: none;
+   }
+   ul li
+   {
+    display: block;
+    text-align:center;
+   }
+   .logo
+   {
+    display: none;
+   }
+   .ham
+   {
+    display: block;
+   }
+   .act
+   {
+    transition:2s;
+    display: block;
+   }
+   .lnav
+   {
+    position: relative;
+   }
+   #foot
+   {
+    position: absolute;
+    bottom: 0;
+   }
+   
+}
+
+
+input
+{
+  text-transform: uppercase;
+}

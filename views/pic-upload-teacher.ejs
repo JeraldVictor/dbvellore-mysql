@@ -1,0 +1,33 @@
+<% include layouts/header.ejs %>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/picup.css">
+  <div class="main">
+    <form class="jumbotron container" action="/pic-upload/teacher/<%=list.tname%>/<%=list.tid%>" method="POST" autocomplete="off" enctype="multipart/form-data">
+    	<div align="center" role="alert" class="alert alert-primary" style="display: <%= typeof list.msg != 'undefined' ? 'block' : 'none' %>">
+	    	<%= typeof list.msg != 'undefined' ? list.msg : '' %>
+	    </div>
+    <div class="row justify-content-between">
+    <div class="col-6">
+        <div class="form-group">
+        <label for="sname">Teacher Name</label>
+        <p><%=list.tname%></p>
+        </div>
+        <div class="form-group">
+          <label for="add_no">Teacher ID</label>
+          <p><%=list.tid%></p>
+        </div>
+    </div>
+    <div class="col-6">
+      <div class="form-group">
+        <label for="upimg">Select Image</label>
+        <input type="file" class="form-control-file" id="upimg" name="profileImage">
+      </div>
+    </div>
+	</div>
+	<br>
+	<br>
+	 <div style="margin-left: 70%;">
+	  	<a class="btn btn-danger" href="/teachers/edit/<%=list.tid%>/<%=list.tname%>">Cancel</a>
+		<button type="submit" class="btn btn-primary" >Submit</button>
+	  </div>
+    </form>
+<% include layouts/footer.ejs %>

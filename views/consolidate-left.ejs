@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Right atendence</title>
+    <link rel="icon" type="image/gif/png" href="/images/skllogo.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/daily-atnd.css" media="screen,projection">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/print-cosol-print.css" media="print">
+</head>
+<body>
+<div class="printing">
+    <h4>Preparing Your PDF</h4>
+    <img src="/images/workingas.gif" alt="">
+</div>
+<div id="border">
+<div id="pagination" class="row">
+    <div class="col">
+        <%-data.pages%>
+    </div>
+    <div class="col">
+        <button id="printbtn" class="btn btn-light">
+            <img src="/images/print.png" alt="" width="20" height="20" style="margin:10px;"> <strong> Print</strong>
+        </button>
+    </div>
+</div>
+    <div class="outline">
+		<br>
+		<div class="wid">
+			<img class="dblogo" src="/images/donbosco.jpg" width="100px" height="100px">
+	    <div class="head">DON BOSCO MATRIC HR. SEC. SCHOOL - STUDENTS PARTICULARS</div>
+	    <br>
+	    <div class="subhead">
+	    	<span>CLASS <%=data.std%> - <%=data.sec%></span>
+	      	<span>CONSOLIDATE ATTENDANCE REGISTER OF <%=data.year%> </span>
+	    </div>
+        <br>
+    </div>
+        <hr class="style-seven">
+        <table>
+            <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th colspan="4">TERM 3</th>
+                <th></th>
+                <th colspan="4">GRAND TOTAL</th>
+                <th></th>
+            </thead>
+            <thead>
+                <th>S.No</th>
+                <th>Adm.</th>
+                <th>Student Name</th>
+                <th>JAN</th>
+                <th>FEB</th>
+                <th>MAR</th>
+                <th>APR</th>
+                <th>TOTAL</th>
+                <th>TEM 1</th>
+                <th>TER 2</th>
+                <th>TER 3</th>
+                <th>TOTAL</th>
+                <th>%</th>
+            </thead>
+            <tbody>
+               <%Object.keys(data.items).forEach(function (key) {%>
+                <tr>
+                    <td><%=(data.start+1)%></td>
+                    <td><%=data.items[key].add_no%></td>
+                    <td width="30%" height="10" class="text-left"><%=data.items[key].name%></td>
+                    <%for (var i =0; i < 10; i++) { %>
+                    <td width="6%" height="6%" class="num"></td>
+                    <%}%>
+                </tr>
+                <%data.start++});%>
+                <div>
+                <%if(last==="ok"){%>
+                    <tr>
+                        <td colspan="3">DATE</td>
+                        <%for (var i =0; i < 10; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">SIGNATURE OF CLASS TEACHER</td>
+                        <%for (var i =0; i < 10; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <tr>
+                        <td colspan="3">SIGNATURE OF PRINCIPAL</td>
+                        <%for (var i =0; i < 10; i++) {%>
+                        <td></td>
+                        <%}%>
+                    </tr>
+                    <%}%>
+                </div>
+            </tbody>
+        </table>
+    </div>
+</div>
+    <script src="/javascripts/jquery.js"></script>
+    <script>
+    $("#printbtn").click(function(){
+    	$("#border").css("display","none");
+    	$(".printing").css("display","block");
+    	window.location.href='/report/console-1/console-2/print/<%-data.std%>/<%-data.sec%>/<%-data.pageCount%>';
+    });
+</script>
+</body>
+</html>

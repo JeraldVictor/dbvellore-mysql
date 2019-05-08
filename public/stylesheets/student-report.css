@@ -1,0 +1,126 @@
+
+.printing{
+    margin-top: 5%;
+    text-align: center;
+    display: none;
+}
+
+#border{
+    margin: 10%;
+    border: 2px solid black;
+}
+
+#pagination .col
+{
+    padding: 5%;
+    text-align:center;
+}
+#printbtn{
+    background: none;
+}
+
+.wid {
+    text-align: center;
+    height: 90px;
+    padding: 10px;
+}
+
+.aone {
+    width: 15%;
+    height: 90px;
+    float: left;
+}
+
+.atwo {
+    text-decoration: underline;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 15%;
+    height: 90px;
+    font-size: 16px;
+}
+
+
+.atwo span {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.one {
+    margin-right: 10px;
+    float: left;
+}
+
+.two {
+    margin-left: 15%;
+    margin-right: 10px;
+    padding-bottom: 10px;
+}
+
+table {
+    page-break-inside: avoid;
+    width: 90%;
+    height: 50%;
+}
+
+td,
+th {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+th:nth-child(1) {
+    text-align: right;
+}
+
+th:nth-child(2) {
+    text-align: center;
+}
+
+.address-col {
+    /* overflow-x: hidden; */
+    width: 30%;
+    height: 10%;
+    padding: 3px;
+    margin: 0;
+}
+
+hr.style-seven {
+    overflow: visible;
+    /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+
+hr.style-seven:before {
+    /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: black;
+}
+
+hr {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.report {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}

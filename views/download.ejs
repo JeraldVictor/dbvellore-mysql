@@ -1,0 +1,18 @@
+<% include layouts/header.ejs %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/download.css">
+<div class="container">
+	<h3>Avilable Download Content</h3>
+      <%for(var i=0;i<fname.length;i++){%>
+		  	<div class="row">
+				<p class="btn btn-success btn-lg btn-block col-10"><a href="/pdf/<%=fname[i]%>" download><%=fname[i]%></a></p>
+				<p class="col"></p>
+				<p class="btn btn-danger col">
+					<a href="/download/<%=fname[i]%>">
+						<img src="/images/delete.svg">
+					</a>
+				</p>
+			</div>
+		<%}%>
+
+</div>
+<% include layouts/footer.ejs %>
