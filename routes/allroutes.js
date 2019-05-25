@@ -235,10 +235,9 @@ router.get("/download",authenticationMiddleware(),function(req,res){
             for(let i=0;i<a.length;i++){
                 let l=a[i].length-4;
                 let ext=a[i].slice(l);
-                // console.log(ext);
                 if(ext===".pdf"){
                     global.disp.push(a[i])
-                    global.fname.push(a[i].slice(-13))
+                    global.fname.push(a[i].substr(dirr.length))
                 }
             }
             res.render("download",{title:"Download Report",fname,src:disp});
@@ -258,6 +257,7 @@ router.get("/download/:src", authenticationMiddleware(), function (req, res) {
         fs.unlink(del_file, function(err) {
             if(err){
                 console.log(err);
+                res.redirect("/download");
             }else{
                 res.redirect("/download");
             }

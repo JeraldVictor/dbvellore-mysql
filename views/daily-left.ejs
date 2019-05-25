@@ -42,7 +42,7 @@
             <thead>
                 <th>S.No</th>
                 <th>Name</th>
-                <%for (var i =15; i < start; i++) {%>
+                <%for (var i =15; i < start-1; i++) {%>
                 <td class="num"><%=Math.round(i+1)%></td>
                 <%} inc=0;%>
                 <td>Month Total</td>
@@ -53,7 +53,7 @@
                 <tr>
                     <td><%=(data.start+1)%></td>
                     <td width="30%" height="10" class="text-left"><%=data.items[key].name%></td>
-                    <%for (var i =0; i < days.length; i++) {%>
+                    <%for (var i =0; i < days.length-1; i++) {%>
                         <%if(days[i]==="Sun"){%>
                             <td>SUN</td>
                         <%}else{%>
@@ -68,42 +68,42 @@
                     <tr>
                         <td colspan="2">Strength of the Class</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>
                     <tr>
                         <td colspan="2">TC/Long Absent</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>
                     <tr>
                         <td colspan="2">Total No of Students Present FN</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>
                     <tr>
                         <td colspan="2">Signature of Teacher</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>
                     <tr>
                         <td colspan="2">Total No of Students Present AN</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>
                     <tr>
                         <td colspan="2">Signature of Teacher</td>
                         <td></td>
-                        <%for (var i =0; i < days.length; i++) {%>
+                        <%for (var i =0; i < days.length-1; i++) {%>
                         <td></td>
                         <%}%>
                     </tr>

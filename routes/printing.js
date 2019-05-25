@@ -24,7 +24,14 @@ let ppage = 0;
 let year;
 let next_yr;
 
+// router.get("*",(req,res)=>{
+//   res.send(`Under Construction <br> <button onclick="window.history.go(-1); return false;">Back</button>`)
+// })
+
 router.get("/year/:yr/:std/:sec/:page",authenticationMiddleware(), (req, res)=>{
+  pdfUrls = []
+  names = [];
+  files2gather = [];
   let std = req.params.std;
   let sec = req.params.sec;
   let pg = req.params.page;
@@ -88,28 +95,28 @@ router.get("/:std/:sec/:page",authenticationMiddleware(),(req, res)=>{
           if (result.hasOwnProperty(key)) {
             let val = result[key];
             val.dob = moment(val.dob, "YYYY-MM-DD").format("DD-MMM-YYYY").toUpperCase();
-            if (val.caste === 'SCA') {
+            if (val.community === 'SCA') {
               sca++;
             }
-            if (val.caste === 'SC') {
+            if (val.community === 'SC') {
               sc++;
             }
-            if (val.caste === 'ST') {
+            if (val.community === 'ST') {
               st++;
             }
-            if (val.caste === 'MBC') {
+            if (val.community === 'MBC') {
               mbc++;
             }
-            if (val.caste === 'BCM') {
+            if (val.community === 'BCM') {
               bcm++;
             }
-            if (val.caste === 'BC') {
+            if (val.community === 'BC') {
               bc++;
             }
-            if (val.caste === 'OC') {
+            if (val.community === 'OC') {
               oc++;
             }
-            if (val.caste === 'FC') {
+            if (val.community === 'FC') {
               fc++;
             }
             if (val.gender === 'MALE') {
@@ -798,6 +805,9 @@ router.get("/merge/finished-a-class/:std/:sec", authenticationMiddleware(), (req
           }
         });
       }
+      pdfUrls = []
+      names = [];
+      files2gather = [];
       res.redirect("/download");
     }
   });

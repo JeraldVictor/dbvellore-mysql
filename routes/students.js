@@ -53,19 +53,19 @@ router.post('/add',upload.any(), function (req, res) {
     let mob2 = req.body.mob2;
     let address = req.body.address.toUpperCase();
     let religion = req.body.religion.toUpperCase();
-    let caste = req.body.caste.toUpperCase();
-    let community = req.body.Community.toUpperCase();
+    let community = req.body.cast.toUpperCase();
+    let cast = req.body.Community.toUpperCase();
 
     let loc='./public/uploads/'+global.fn;
     let newloc='./public/uploads/'+name+'-'+add_no+'.jpg';
     let img=name+'-'+add_no;
     fs.renameSync(loc,newloc);
-    // console.log("\nname \t" + name + "\n add_no \t" + add_no + "\n std \t" + std + "\t sec \t" + sec + "\n phno \t" + mob1 + "\t" + mob2 + '\n image \t' + img + '\n blood group\t' + bg + '\n exno \t' + exno + '\n emis\t' + emis + '\n addha\t' + aadhar + '\n dob\t' + dob + '\n gender\t' + gender + '\n fname \t' + fname + '\n foc\t' + foc + '\n mname\t' + mname + '\n moc\t' + moc + '\n address\t' + address + '\n relegion\t' + religion + '\n caste\t' + caste + '\n comunity\t' + community);
-    //name,bg,exno,add_no,std,sec,emis,aadhar,dob,gender,fname,foc,mname,moc,mob1,mob2,address,religion,caste,community
+    // console.log("\nname \t" + name + "\n add_no \t" + add_no + "\n std \t" + std + "\t sec \t" + sec + "\n phno \t" + mob1 + "\t" + mob2 + '\n image \t' + img + '\n blood group\t' + bg + '\n exno \t' + exno + '\n emis\t' + emis + '\n addha\t' + aadhar + '\n dob\t' + dob + '\n gender\t' + gender + '\n fname \t' + fname + '\n foc\t' + foc + '\n mname\t' + mname + '\n moc\t' + moc + '\n address\t' + address + '\n relegion\t' + religion + '\n cast\t' + cast + '\n comunity\t' + community);
+    //name,bg,exno,add_no,std,sec,emis,aadhar,dob,gender,fname,foc,mname,moc,mob1,mob2,address,religion,cast,community
     let buffer  = fs.readFileSync(newloc)
     b64.encode(buffer).then((base64Image)=>{
         // console.log(base64Image.length)
-        db.query("insert into student values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",[name,bg,exno,add_no,std,sec,emis,aadhar,dob,gender,fname,foc,mname,moc,mob1,mob2,address,religion,caste,community,base64Image],function(err) {
+        db.query("insert into student (`std`, `sec`, `add_no`, `exno`, `name`, `dob`, `gender`, `religion`, `community`, `cast`, `fname`, `foc`, `mname`, `moc`, `address`, `mob1`, `mob2`, `bg`, `emis`, `aadhar`, `img`) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", [std,sec,add_no,exno,name,dob,gender,religion,community,cast,fname,foc,mname,moc,address,mob1,mob2,bg,emis,aadhar,base64Image],function(err) {
             if (err)
             {
                 console.log(err);
@@ -110,28 +110,28 @@ router.get('/edit/:std/:sec', authenticationMiddleware(), function (req, res) {
                     if (result.hasOwnProperty(key)) {
                         let val = result[key];
                         val.dob = moment(val.dob, "YYYY-MM-DD").format("DD-MMM-YYYY").toUpperCase();
-                        if(val.caste==='SCA'){
+                        if(val.community==='SCA'){
                             sca++;
                         }
-                        if (val.caste === 'SC') {
+                        if (val.community === 'SC') {
                             sc++;
                         }
-                        if (val.caste === 'ST') {
+                        if (val.community === 'ST') {
                             st++;
                         }
-                        if (val.caste === 'MBC') {
+                        if (val.community === 'MBC') {
                             mbc++;
                         }
-                        if (val.caste === 'BCM') {
+                        if (val.community === 'BCM') {
                             bcm++;
                         }
-                        if (val.caste === 'BC') {
+                        if (val.community === 'BC') {
                             bc++;
                         }
-                        if (val.caste === 'OC') {
+                        if (val.community === 'OC') {
                             oc++;
                         }
-                        if (val.caste === 'FC') {
+                        if (val.community === 'FC') {
                             fc++;
                         }
                         if(val.gender==='MALE'){
@@ -206,7 +206,7 @@ router.post('/update/:addno', function (req, res) {
     let mob2 = req.body.mob2;
     let address = req.body.address.toUpperCase();
     let religion = req.body.religion.toUpperCase();
-    let caste = req.body.caste.toUpperCase();
+    let cast = req.body.cast.toUpperCase();
     let community = req.body.Community.toUpperCase();
 
     let img=name+'-'+add_no;
@@ -228,7 +228,7 @@ router.post('/update/:addno', function (req, res) {
                 if ( err ) console.log('ERROR: ' + err);
             });
 
-            db.query("UPDATE student SET name=?,bg=?,exno=?,add_no=?,std=?,sec=?,emis=?,aadhar=?,dob=?,gender=?,fname=?,foc=?,mname=?,moc=?,mob1=?,mob2=?,address=?,religion=?,caste=?,community=?,img=? WHERE add_no = ? ", [name,bg,exno,add_no,std,sec,emis,aadhar,dob,gender,fname,foc,mname,moc,mob1,mob2,address,religion,caste,community,img,old_id], function (err, result) {
+            db.query("UPDATE student SET name=?,bg=?,exno=?,add_no=?,std=?,sec=?,emis=?,aadhar=?,dob=?,gender=?,fname=?,foc=?,mname=?,moc=?,mob1=?,mob2=?,address=?,religion=?,cast=?,community=?,img=? WHERE add_no = ? ", [name,bg,exno,add_no,std,sec,emis,aadhar,dob,gender,fname,foc,mname,moc,mob1,mob2,address,religion,cast,community,img,old_id], function (err, result) {
                 if (err)
                 {
                     console.log(err);
